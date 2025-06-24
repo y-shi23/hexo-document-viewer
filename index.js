@@ -21,7 +21,7 @@ hexo.extend.tag.register('doc', function(args) {
     throw new Error('doc: 缺少文件URL参数');
   }
 
-  const viewerId = 'doc-' + Math.random().toString(36).substr(2, 9);
+  const viewerId = 'doc-viewer-' + Math.random().toString(36).substr(2, 9);
 
   const html = `
 <div id="${viewerId}" 
@@ -124,6 +124,6 @@ function parseArgs(args) {
 // 导出插件信息
 module.exports = {
   name: 'hexo-document-viewer',
-  version: '1.0.4',
+  version: '1.0.0',
   description: 'Document viewer plugin for Hexo'
 };
