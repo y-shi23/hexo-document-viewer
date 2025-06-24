@@ -1,6 +1,6 @@
 {
   "name": "hexo-document-viewer",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A Hexo plugin for embedding and previewing documents (PDF, Word, Excel, PowerPoint, etc.) in blog posts",
   "main": "index.js",
   "keywords": [
