@@ -1,0 +1,35 @@
+{
+  "name": "hexo-document-viewer",
+  "version": "1.0.2",
+  "description": "A Hexo plugin for embedding and previewing documents (PDF, Word, Excel, PowerPoint, etc.) in blog posts",
+  "main": "index.js",
+  "keywords": [
+    "hexo",
+    "plugin",
+    "document",
+    "viewer",
+    "pdf",
+    "word",
+    "excel",
+    "powerpoint",
+    "embed"
+  ],
+  "author": "Stone Ocean",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/hexo-document-viewer.git"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "hexo": ">=5.0.0"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "assets/"
+  ]
+}
