@@ -10,28 +10,29 @@ const path = require('path');
 const fs = require('fs');
 
 // 注册标签
-hexo.extend.tag.register('document_viewer', function(args, content) {
-  const options = parseArgs(args);
-  
-  // 验证必要参数
-  if (!options.url) {
-    throw new Error('document_viewer: 缺少文件URL参数');
+hexo.extend.tag.register('doc', function(args) {
+  const url = args[0];
+  const type = args[1] || 'pdf';
+  const title = args[2] || '文档预览';
+  const width = args[3] || '100%';
+  const height = args[4] || '600px';
+
+  if (!url) {
+    throw new Error('doc: 缺少文件URL参数');
   }
-  
-  // 生成唯一ID
-  const viewerId = 'doc-viewer-' + Math.random().toString(36).substr(2, 9);
-  
-  // 构建HTML
+
+  const viewerId = 'doc-' + Math.random().toString(36).substr(2, 9);
+
   const html = `
 <div id="${viewerId}" 
      data-doc-viewer="true"
-     data-file-url="${options.url}"
-     ${options.type ? `data-file-type="${options.type}"` : ''}
-     data-width="${options.width || '100%'}"
-     data-height="${options.height || '600px'}"
-     data-title="${options.title || '文档预览'}">
+     data-file-url="${url}"
+     data-file-type="${type}"
+     data-width="${width}"
+     data-height="${height}"
+     data-title="${title}">
 </div>`;
-  
+
   return html;
 }, { ends: false });
 
@@ -123,6 +124,6 @@ function parseArgs(args) {
 // 导出插件信息
 module.exports = {
   name: 'hexo-document-viewer',
-  version: '1.0.0',
+  version: '1.0.4',
   description: 'Document viewer plugin for Hexo'
 };
